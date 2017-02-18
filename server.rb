@@ -1,6 +1,6 @@
 require 'socket' # Provides TCPServer and TCPSocket classes
 
-server = TCPServer.new('localhost', 8000)
+server = TCPServer.new(8080)
 
 loop do
   socket = server.accept
@@ -9,7 +9,7 @@ loop do
 
   STDERR.puts request
 
-  response = "Hello World Again!\n"
+  response = "Hello World!\n"
 
   socket.print response
 
