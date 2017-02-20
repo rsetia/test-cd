@@ -10,5 +10,8 @@ fi
 
 if [ "$launch" = '1' ]; then
         echo "launching server..."
+	exec 0>&-    # close stdin
+	exec 1>&-    # close stdout
+	exec 2>&-    # close stderr
         nohup ruby server.rb $1 &
 fi
