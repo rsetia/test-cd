@@ -10,5 +10,5 @@ fi
 
 if [ "$launch" = '1' ]; then
         echo "launching server..."
-        nohup ruby server.rb $1 >/dev/null 2>&1 &
+        nohup ruby server.rb $1 &
 fi
