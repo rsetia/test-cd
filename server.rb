@@ -1,6 +1,12 @@
 require 'socket' # Provides TCPServer and TCPSocket classes
 
-server = TCPServer.new(8080)
+if ARGV.empty?
+        port = 8080
+else
+        port = ARGV[0]
+end
+
+server = TCPServer.new(port)
 
 loop do
   socket = server.accept
