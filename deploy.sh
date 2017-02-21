@@ -13,5 +13,5 @@ if [ "$launch" = '1' ]; then
 	exec 0>&-    # close stdin
 	exec 1>&-    # close stdout
 	exec 2>&-    # close stderr
-        BUILD_ID=dontKillMe nohup ruby server.rb $port &
+        ruby server.rb $port
 fi
