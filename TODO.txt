@@ -1,0 +1,32 @@
+cmds: 
+	install jenkins:
+
+		sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+		sudo yum install jenkins
+		sudo less /etc/sysconfig/jenkins
+		sudo less /var/log/jenkins/jenkins.log
+		# launch in port 8081 
+		sudo vim /etc/sysconfig/jenkins
+		sudo service jenkins start
+		sudo vim /var/lib/jenkins/secrets/initialAdminPassword
+
+	install git
+		sudo yum install git 
+
+
+	login as a daemon user:
+		sudo su -s /bin/bash jenkins
+
+
+
+ports: 
+
+8000 - jenkins 
+8080 - prod 
+8081 - test
+
+
+
+- get deploy.sh to deploy to different ports. one for testing one for prod
+- if the test.sh passes for the test server, then deploy for prod
+- otherwise build should fail 
